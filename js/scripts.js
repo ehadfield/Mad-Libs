@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $("#formOne").submit(function(event) {
+  /*$("#formOne").submit(function(event) {
     var adj1Input = $("input#adj1").val();
     var adj2Input = $("input#adj2").val();
     var adj3Input = $("input#adj3").val();
@@ -28,8 +28,16 @@ $(document).ready(function() {
     $(".plurN2").text(plurN2Input);
     $(".Spanish1").text(Spanish1Input);
     $(".Spanish2").text(Spanish2Input);
-    $(".plurN3").text(plurN3Input);
+    $(".plurN3").text(plurN3Input);*/
 
+
+    $("#formOne").submit(function(event) {
+        var blanks = ["adj1", "adj2", "adj3", "adj4", "artOfCloth", "exclamation", "geo", "noun", "bodyPart", "plurN1", "plurN2", "Spanish1", "Spanish2", "plurN3"];
+
+        blanks.forEach(function(blank) {
+          var userInput = $("input#" + blank).val();
+          $("." + blank).text(userInput);
+        });
     $("#story").show();
 
     event.preventDefault();
